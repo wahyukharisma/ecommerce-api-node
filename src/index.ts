@@ -1,5 +1,6 @@
 import express, { json, urlencoded } from "express";
 import procutsRouter from "./routes/products/index";
+import authRouter from "./routes/auth/index";
 
 const port = 3000;
 
@@ -13,6 +14,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/products', procutsRouter);
+app.use('/auth', authRouter);
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
